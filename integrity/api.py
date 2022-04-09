@@ -22,11 +22,13 @@ class Integrity:
     def _inject_command(self, cmd: str):
         self._runtime.commands.append(self._mc.parse(cmd, using="command"))
 
-    def get_path(self, name: str):
+    def get_path(self, name: str = None):
         current = self._runtime.get_path()
+        if not name:
+            return f"{current}/component"
         return f"{current}/components/{name}"
 
-    def component(self, name: str):
+    def component(self, name: str = None):
         return Component(self, name, self.get_path(name))
 
 
