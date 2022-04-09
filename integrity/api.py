@@ -1,6 +1,5 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from functools import cached_property
-from typing import Any, Dict
 
 from beet import Context
 from mecha import Mecha
@@ -21,35 +20,3 @@ class Integrity:
 
     def _inject_command(self, cmd: str):
         self._runtime.commands.append(self._mc.parse(cmd, using="command"))
-
-    def get_path(self, name: str = None):
-        current = self._runtime.get_path()
-        if not name:
-            return f"{current}/component"
-        return f"{current}/components/{name}"
-
-    def component(self, name: str = None):
-        return Component(self, name, self.get_path(name))
-
-
-@dataclass
-class Component:
-    ref: Integrity
-    name: str
-    root: str
-    data: Dict[str, Any] = field(default_factory=dict)
-    methods: Dict[str, str] = field(default_factory=dict)
-
-    def path(self, relative: str):
-        return f"{self.root}/{relative}"
-
-    def on(self, method: str):
-        path = self.path(method)
-        self.methods[method] = path
-        return path
-
-    def run(self, method: str):
-        if not self.methods.get(method):
-            self.on(method)
-        path = self.methods[method]
-        self.ref._inject_command(f"function {path}")
