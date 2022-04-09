@@ -1,9 +1,21 @@
 [tool.poetry]
 name = "integrity"
 version = "0.1.0"
-description = ""
-authors = ["TheWii <67249660+TheWii@users.noreply.github.com>"]
+description = "Development facilities for the bolt environment"
+authors = ["TheWii"]
 license = "MIT"
+
+homepage = "https://github.com/thewii/integrity"
+repository = "https://github.com/thewii/integrity"
+
+readme = "README.md"
+
+keywords = [
+  "beet",
+  "minecraft",
+  "bolt",
+  "mecha"
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -13,7 +25,31 @@ mecha = "^0.43.3"
 [tool.poetry.dev-dependencies]
 black = "^22.3.0"
 isort = "^5.10.1"
+python-semantic-release = "^7.27.1"
+mudkip = "^0.5.3"
+pytest-insta = "^0.1.11"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+target-version = ["py39"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+
+[tool.mudkip]
+preset = "furo"
+
+[tool.mudkip.override]
+html_title = "integrity"
+suppress_warnings = ["myst.header"]
+
+[tool.semantic_release]
+branch = "main"
+version_variable = ["integrity/__init__.py:__version__"]
+version_toml = "pyproject.toml:tool.poetry.version"
+major_on_zero = false
+build_command = "poetry build && poetry run mudkip build --update-gh-pages --repository https://x-access-token:${GH_TOKEN}@github.com/thewii/integrity"
