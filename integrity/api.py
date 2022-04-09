@@ -19,16 +19,20 @@ class Integrity:
     def _runtime(self):
         return self.ctx.inject(Runtime)
 
+    def _inject_command(self, cmd: str):
+        self._runtime.commands.append(self._mc.parse(cmd, using="command"))
+
     def get_path(self, name: str):
         current = self._runtime.get_path()
         return f"{current}/components/{name}"
 
     def component(self, name: str):
-        return Component(name, self.get_path(name))
+        return Component(self, name, self.get_path(name))
 
 
 @dataclass
 class Component:
+    ref: Integrity
     name: str
     root: str
     data: Dict[str, Any] = field(default_factory=dict)
@@ -43,4 +47,7 @@ class Component:
         return path
 
     def run(self, method: str):
-        return self.methods[method]
+        if not self.methods.get(method):
+            self.on(method)
+        path = self.methods[method]
+        self.ref._inject_command(f"function {path}")
