@@ -1,0 +1,1 @@
+say Abc init
