@@ -44,10 +44,13 @@ class Component:
     mcfunctions: Dict[str, str] = field(default_factory=dict)
 
     def path(self, relative: str):
+        if self.root.endswith(":"):
+            return self.root + relative
         return f"{self.root}/{relative}"
 
-    def on(self, function_name: str):
-        path = self.path(function_name)
+    def on(self, function_name: str, path: str = None):
+        if path is None:
+            path = self.path(function_name)
         self.mcfunctions[function_name] = path
         return path
 
