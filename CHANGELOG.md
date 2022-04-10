@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.4.0 (2022-04-10)
+### Feature
+* Ability to enforce function paths when using `Component.on`. ([`8ebef8f`](https://github.com/TheWii/integrity/commit/8ebef8fce7c246d5f624c7c858266732bdfedace))
+* Create components at specific paths by using the `path` parameter. ([`ad07f1d`](https://github.com/TheWii/integrity/commit/ad07f1d64d227d4b721df5ea5be9f9d9b2614f30))
+
 ## v0.3.0 (2022-04-09)
 ### Feature
 * Component API ([`df2c8bd`](https://github.com/TheWii/integrity/commit/df2c8bdf43df3428cc24438106429340292859de))
