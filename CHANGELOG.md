@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.5.0 (2022-04-12)
+### Feature
+* Component functions are event-based. ([`aba8e55`](https://github.com/TheWii/integrity/commit/aba8e55b992f994461a94f9c7da50b56506391ed))
+
 ## v0.4.0 (2022-04-10)
 ### Feature
 * Ability to enforce function paths when using `Component.on`. ([`8ebef8f`](https://github.com/TheWii/integrity/commit/8ebef8fce7c246d5f624c7c858266732bdfedace))
