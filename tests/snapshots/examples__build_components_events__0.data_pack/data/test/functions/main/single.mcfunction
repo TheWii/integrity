@@ -1,0 +1,1 @@
+say Single function call

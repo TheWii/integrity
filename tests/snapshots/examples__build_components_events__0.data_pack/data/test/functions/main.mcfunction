@@ -1,0 +1,10 @@
+function test:main/single
+function #test:main/many
+function test:main/run_single_before_definition
+function #test:main/many_but_defined_after_run
+function test:main/not_defined_but_run_as_single
+function #test:main/not_defined_but_run_as_many
+function #test:main/single_but_forced_to_be_a_tag
+function test:foo
+function #test:main/many_across_namespaces
+function #test:main/rainbow

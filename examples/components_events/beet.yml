@@ -1,0 +1,16 @@
+name: integrity-components-events
+
+data_pack:
+  load: [src]
+
+require:
+  - mecha.contrib.bolt
+  - integrity
+
+pipeline:
+  - mecha
+
+output: dist
+
+meta:
+  generate_namespace: test

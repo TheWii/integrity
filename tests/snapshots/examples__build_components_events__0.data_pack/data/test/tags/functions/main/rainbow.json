@@ -1,0 +1,11 @@
+{
+  "values": [
+    "test:main/color/red",
+    "test:main/color/orange",
+    "test:main/color/yellow",
+    "test:main/color/green",
+    "test:main/color/blue",
+    "test:main/color/indigo",
+    "test:main/color/violet"
+  ]
+}
