@@ -7,3 +7,6 @@ function stuff.on("greet"):
   say stuff.data["message"]
 
 stuff.run("greet")
+
+function stuff.on("tick", tags=["tick"]):
+  say Ticking
