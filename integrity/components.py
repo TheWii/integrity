@@ -3,13 +3,7 @@ from typing import Any, Dict, List
 
 from beet import Context, FunctionTag
 from beet.core.utils import required_field
-from mecha import (
-    AstChildren,
-    AstCommand,
-    AstResourceLocation,
-    MutatingReducer,
-    rule,
-)
+from mecha import AstChildren, AstCommand, AstResourceLocation, MutatingReducer, rule
 
 from .api import Integrity
 
