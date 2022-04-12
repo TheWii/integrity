@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.6.0 (2022-04-12)
+### Feature
+* Function tags for `Component.on` with `tags` argument ([`367dda3`](https://github.com/TheWii/integrity/commit/367dda3793e9f1eaa495b639c4536be26c14f64a))
+
 ## v0.5.0 (2022-04-12)
 ### Feature
 * Component functions are event-based. ([`aba8e55`](https://github.com/TheWii/integrity/commit/aba8e55b992f994461a94f9c7da50b56506391ed))
