@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import Any, Dict, List
+from typing import Any, Dict, Iterable, List
 
 from beet import Context, FunctionTag
 from beet.core.utils import required_field
@@ -67,7 +67,7 @@ class Component:
             return prefix + self.root + relative
         return f"{prefix}{self.root}/{relative}"
 
-    def on(self, event_name: str, path: str = None):
+    def on(self, event_name: str, path: str = None, tags: Iterable[str] = ()):
         event = self._get_or_create_event(event_name)
         values = event["values"]
         if path is None:
@@ -78,6 +78,10 @@ class Component:
             values.append(path)
             if not event["tag"] and len(values) > 1:
                 event["tag"] = True
+        for tag in tags:
+            self.ref.api._inject_raw(
+                f'merge function_tag {tag} {{"values":["{path}"]}}'
+            )
         return path
 
     def run(self, event_name: str):
