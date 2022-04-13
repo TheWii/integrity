@@ -1,4 +1,4 @@
-__version__ = "0.6.0"
+__version__ = "0.6.1"
 
 from .api import Integrity as _Integrity
 from .components import Components as _Components

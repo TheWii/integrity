@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.6.1 (2022-04-13)
+### Fix
+* Incorrect dependency versioning. ([`8eae45b`](https://github.com/TheWii/integrity/commit/8eae45bbd3585bc492e3cd5070eb0bf0a46ccf6a))
+
 ## v0.6.0 (2022-04-12)
 ### Feature
 * Function tags for `Component.on` with `tags` argument ([`367dda3`](https://github.com/TheWii/integrity/commit/367dda3793e9f1eaa495b639c4536be26c14f64a))
