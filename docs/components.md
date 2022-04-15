@@ -112,7 +112,7 @@ this method requires extra caution, since **two components can't**
 Now that we have a `Component` object in hands, we can start defining
 its properties through the API.
 
-### <span style="font-size: 0.8em">Component.</span> **on**(function_name: *str*): *str*
+### Component.on(function_name: *str*): *str*
 
 Creates and returns a [resource location](https://minecraft.fandom.com/wiki/Resource_location) associated with the given
 `function_name` value. The returned `str` value can be used to define a nested
@@ -156,7 +156,7 @@ root:
 > **Note:** This structure might change in the future and/or will be
 customizable.
 
-### <span style="font-size: 0.8em">Component.</span> **run**(function_name: *str*)
+### Component.run(function_name: *str*)
 
 Generates a `function` command that calls the function with
 the specified `function_name` value. The command is generated regardless
@@ -189,7 +189,7 @@ function ./tick:
         beam.run("tick")
 ```
 
-### <span style="font-size: 0.8em">Component.</span> **data**: *dict[str, Any]*
+### Component.data: *dict[str, Any]*
 
 A `dict` object to store anything that might belong to a specific component.
 All components are created with an empty `data` field.
@@ -207,4 +207,4 @@ player.data # { "entity_id": "minecraft:player" }
 pig.data # { "entity_id": "minecraft:pig" }
 ```
 
-### <span style="font-size: 0.8em">Component.</span> **path**(relative: *str*, tag: *bool* = False)
+### Component.path(relative: *str*, tag: *bool* = False)
