@@ -1,5 +1,6 @@
 .beet_cache
 __pycache__
+_build
 dist
 .DS_Store
 .pytest_cache/
