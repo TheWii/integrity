@@ -112,84 +112,119 @@ this method requires extra caution, since **two components can't**
 Now that we have a `Component` object in hands, we can start defining
 its properties through the API.
 
-### Component.on(function_name: *str*): *str*
+### API
+#### Component.on
 
-Creates and returns a [resource location](https://minecraft.fandom.com/wiki/Resource_location) associated with the given
-`function_name` value. The returned `str` value can be used to define a nested
-function:
+> `Component.on(event_name: str, path: str = None, tags: Iterable[str] = [])`
+
+Registers a new function listener to the event `event_name`. If the parameter
+`path` is not specified, a unique path is generated using `Component.path`.
+If the parameter `tags` is specified, the registered function is added to
+all function tags.
+
+Returns the registered [resource location](https://minecraft.fandom.com/wiki/Resource_location). The returned value can be used to define a nested
+function.
 
 ```python
-# main.mcfunction
+# namespace:main
 
 from integrity import Component
 
 clock = Component("golden_clock")
 
+init_path = clock.on("init")
+function init_path:
+    say "On clock init"
 
-tick_function_path = clock.on("tick")
+function clock.on("tick", tags=["minecraft:tick"]):
+    say "On clock tick"
 
-function tick_function_path:
-    say "Clock ticks"
+function clock.on("second"):
+    say "On clock second"
 
+function clock.on("second"):
+    say "Also on clock second"
 
-function clock.on("midnight"):
-    say "It's midnight"
+function clock.on("second", ./path_to/second):
+    say "On clock second but explicit path"
 
-
-function ./tick:
-    clock.run("tick")
+clock.on("second", demo:existing_function/do_stuff)
 ```
 
-This example would generate the following file structure:
+This example would generate the following functions:
 
 ```yaml
-root:
-    - tick.mcfunction
+namespace:
     - main.mcfunction
     - main:
         - components:
             - golden_clock:
+                - init.mcfunction
                 - tick.mcfunction
-                - midnight.mcfunction
+                - second.mcfunction
+                - second_1.mcfunction
+    - path_to:
+        - second.mcfunction
+demo:
+    - existing_function:
+        - do_stuff.mcfunction
 ```
 
-> **Note:** This structure might change in the future and/or will be
-customizable.
+Events will also generate function tags if more than one
+listener is registered:
 
-### Component.run(function_name: *str*)
+```yaml
+namespace:
+    - main:
+        - components:
+            - golden_clock:
+                - second.json
+minecraft:
+    - tick.json
+```
 
-Generates a `function` command that calls the function with
-the specified `function_name` value. The command is generated regardless
-if the function exists.
+Since both the `init` and `tick` events only have a single function
+listener, function tags are not generated and the events will refer
+to their listener paths directly when using `Component.run`.
+
+#### Component.run
+
+> `Component.run(event_name: str)`
+
+Generates a `function` command that calls the event `event_name`.
+If the event only has a single function listener, the listener
+is called directly, otherwise the event function tag is called instead.
+If the provided `event_name` argument is prefixed by `#`, the event
+function tag is forcedly called.
+
+The command is generated regardless if the function/function tag exists.
 
 ```python
+# demo:main
 
 from integrity import Component
 
-beam = Component("beam")
+core = Component(path=./core)
 
-function beam.on("raycast"):
-    unless block ~ ~ ~ air:
-        beam.run("hit")
-    if block ~ ~ ~ air:
-        beam.run("raycast")
+core.on("tick", ./tick)
 
-function beam.on("hit"):
-    setblock ~ ~ ~ air destroy
+core.run("tick")
+# function demo:tick
 
-function beam.on("tick"):
-    if entity @s[tag=right_clicked]:
-        beam.run("raycast")
-    tag @s remove right_clicked
+core.on("stuff") # generates path for us
+core.on("stuff")
 
+core.run("stuff")
+# function #demo:core/stuff
 
-function ./tick:
-    beam.run("clear") # not implemented yet
-    as @a at @s:
-        beam.run("tick")
+core.run("next") # not implemented
+# function demo:core/next
+
+core.run("#prepare")
+# function #demo:core/prepare
 ```
 
-### Component.data: *dict[str, Any]*
+#### Component.data: *dict[str, Any]*
 
 A `dict` object to store anything that might belong to a specific component.
 All components are created with an empty `data` field.
@@ -207,4 +242,26 @@ player.data # { "entity_id": "minecraft:player" }
 pig.data # { "entity_id": "minecraft:pig" }
 ```
 
-### Component.path(relative: *str*, tag: *bool* = False)
+#### Component.path
+
+> `Component.path(relative: str, tag: bool = False)`
+
+Generates a [resource location](https://minecraft.fandom.com/wiki/Resource_location)
+based on the component root path and the provided `relative` argument.
+If `tag` is `True`, a tag resource location (prefixed by `#`) is
+generated instead.
+
+```python
+from integrity import Component
+
+player = Component(path=./player)
+
+predicate player.path("is_sneaking") {
+    ...
+}
+
+if predicate player.path("is_sneaking") say Hi!
+
+loot spawn ~ ~ ~ loot player.path("weapons/iron_sword")
+
+```
