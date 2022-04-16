@@ -224,7 +224,7 @@ core.run("#prepare")
 # function #demo:core/prepare
 ```
 
-#### Component.data: *dict[str, Any]*
+#### Component.data
 
 A `dict` object to store anything that might belong to a specific component.
 All components are created with an empty `data` field.
