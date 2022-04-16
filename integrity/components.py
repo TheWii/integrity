@@ -96,6 +96,11 @@ class Component:
         node = AstCommand(identifier="function:name", arguments=AstChildren([location]))
         self.ref.api._inject_command(node)
 
+    def __getitem__(self, key: str):
+        return self.data[key]
+
+    def __setitem__(self, key: str, value: Any):
+        self.data[key] = value
 
 @dataclass(frozen=True)
 class AstEventResourceLocation(AstResourceLocation):
