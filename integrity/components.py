@@ -1,5 +1,6 @@
 from dataclasses import dataclass, field
-from typing import Any, Dict, Iterable, List
+from functools import partial
+from typing import Any, Callable, Dict, Iterable, List
 
 from beet import Context, FunctionTag
 from beet.core.utils import required_field
@@ -53,6 +54,7 @@ class Component:
     ref: Components = field(repr=False)
     root: str
     data: Dict[str, Any] = field(default_factory=dict)
+    methods: Dict[str, Callable] = field(default_factory=dict)
     events: Dict[str, List[str]] = field(default_factory=dict)
 
     def _get_or_create_event(self, event_name: str):
@@ -96,11 +98,18 @@ class Component:
         node = AstCommand(identifier="function:name", arguments=AstChildren([location]))
         self.ref.api._inject_command(node)
 
+    def setmethod(self, name: str, function: Callable[["Component"], Any]):
+        self.methods[name] = partial(function, self)
+
+    def __getattr__(self, key: str):
+        return self.methods[key]
+
     def __getitem__(self, key: str):
         return self.data[key]
 
     def __setitem__(self, key: str, value: Any):
         self.data[key] = value
+
 
 @dataclass(frozen=True)
 class AstEventResourceLocation(AstResourceLocation):
