@@ -263,5 +263,4 @@ predicate player.path("is_sneaking") {
 if predicate player.path("is_sneaking") say Hi!
 
 loot spawn ~ ~ ~ loot player.path("weapons/iron_sword")
-
 ```

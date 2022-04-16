@@ -29,7 +29,6 @@ function blocks.on("placed_by_player"):
     if block ~ ~ ~ stone expand:
         say Placed stone!
         player.run("placed_stone")
-
 ```
 
 ## Installation
