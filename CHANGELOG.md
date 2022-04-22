@@ -2,6 +2,23 @@
 
 <!--next-version-placeholder-->
 
+## v0.7.0 (2022-04-22)
+### Feature
+* Bind bolt functions to components with `setmethod` ([`e3857f8`](https://github.com/TheWii/integrity/commit/e3857f8cf3e490ac06b41d1979736a5e171e6a3c))
+* Components now behave like dicts for setting/getting the `data` field ([`f34e942`](https://github.com/TheWii/integrity/commit/f34e942292a30cebb5aca272da748818546cc7df))
+
+### Documentation
+* Fix `components` header ([`fe2edd8`](https://github.com/TheWii/integrity/commit/fe2edd880ac4959c9bd1048d044c9ead82262dba))
+* Tweak codeblocks ([`a62ae74`](https://github.com/TheWii/integrity/commit/a62ae7470977d2b2baa3f1bb7766c33c7e7badc8))
+* Update `components` ([`6b0ccf9`](https://github.com/TheWii/integrity/commit/6b0ccf9ac500e38ecdee06bc092d9e773c572604))
+* Fix headers ([`4277a04`](https://github.com/TheWii/integrity/commit/4277a0409f20540f5a719ce0a0941e1b7b0c2f62))
+* Use rx's fork of pygments ([`4ca1c13`](https://github.com/TheWii/integrity/commit/4ca1c13370c4050b7d5640c26b9cc3c0b3703ca2))
+* Add components to index.md ([`1ab49e7`](https://github.com/TheWii/integrity/commit/1ab49e740b99f409516e4250e744dda3acf1fe0e))
+* Move component docs to separate file ([`d1cbeae`](https://github.com/TheWii/integrity/commit/d1cbeaede25535a0d3fcaf2977c899fde1d32ced))
+* Add workflow ([`bfbf0b8`](https://github.com/TheWii/integrity/commit/bfbf0b8c7025d9fa7eec1fe94f374bc64d9d904d))
+* Add mudkip build command ([`1e4a67d`](https://github.com/TheWii/integrity/commit/1e4a67dbce92d470016ba3b47c7362b4d93edb3e))
+* Index.md ([`5bdf4cb`](https://github.com/TheWii/integrity/commit/5bdf4cb44237db54543926f89b88f61bb40da910))
+
 ## v0.6.1 (2022-04-13)
 ### Fix
 * Incorrect dependency versioning. ([`8eae45b`](https://github.com/TheWii/integrity/commit/8eae45bbd3585bc492e3cd5070eb0bf0a46ccf6a))
