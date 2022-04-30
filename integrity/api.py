@@ -3,7 +3,7 @@ from functools import cached_property
 
 from beet import Context
 from mecha import AstCommand, Mecha
-from mecha.contrib.bolt import Runtime
+from bolt import Runtime
 
 
 @dataclass
