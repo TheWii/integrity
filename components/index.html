@@ -1,0 +1,530 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex/" /><link rel="search" title="Search" href="../search/" /><link rel="prev" title="integrity" href="../" />
+
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+        <title>Components - integrity</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mudkip_furo.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../"><div class="brand">integrity</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../">
+  
+  
+  <span class="sidebar-brand-text">integrity</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search/" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Components</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/thewii/integrity">GitHub repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://pypi.org/project/integrity">PyPI package</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section class="tex2jax_ignore mathjax_ignore" id="components">
+<h1>Components<a class="headerlink" href="#components" title="Permalink to this headline">#</a></h1>
+<p>When developing a data pack with <code class="docutils literal notranslate"><span class="pre">bolt</span></code>, it's possible to
+define several nested resources (such as functions and tags)
+in a single bolt script. However, as the data pack grows in size,
+working with all of these resources can get pretty cumbersome,
+since most of the time we would be dealing with absolute and
+relative paths. That being said, <code class="docutils literal notranslate"><span class="pre">integrity</span></code> provides an elegant
+way of working with nested resources: through components.</p>
+<section id="component">
+<h2>Component<a class="headerlink" href="#component" title="Permalink to this headline">#</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">Component</span></code> object is a container of nested resources, but it can
+also hold data and bolt functions. To create a component, simply
+import and call the <code class="docutils literal notranslate"><span class="pre">Component</span></code> factory method:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">integrity</span> <span class="kn">import</span> <span class="n">Component</span>
+
+<span class="n">my_component</span> <span class="o">=</span> <span class="n">Component</span><span class="p">(</span><span class="s2">"demo"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Component</span></code> factory can be used in various ways depending
+on how we want our components to be handled.</p>
+<p>The simplest method is by providing a unique name as first
+parameter. In the example above, <code class="docutils literal notranslate"><span class="pre">my_component</span></code> is called
+<code class="docutils literal notranslate"><span class="pre">demo</span></code>. Named components are children of the bolt module
+they were created on. When we start defining the resources
+of <code class="docutils literal notranslate"><span class="pre">my_component</span></code>, the output structure will be similar to this:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">namespace</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">module.mcfunction</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">module</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">components</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">demo</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">function_1.mcfunction</span><span class="w"></span>
+<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">function_2.mcfunction</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Note that the name <code class="docutils literal notranslate"><span class="pre">demo</span></code> becomes a folder under the
+<code class="docutils literal notranslate"><span class="pre">module/components</span></code> directory. Because of that,
+<strong>a component's name needs to be unique in the module scope.</strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Component</span></code> factory also lets us create a component without
+specifying a name (i.e without any parameter):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">other_component</span> <span class="o">=</span> <span class="n">Component</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In this case, <code class="docutils literal notranslate"><span class="pre">other_component</span></code> is known as a module-level component.
+By including it in our previous example, the updated file structure
+would look like this:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">namespace</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">module.mcfunction</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">module</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">component</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">function_1.mcfunction</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">function_2.mcfunction</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">components</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">demo</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">function_1.mcfunction</span><span class="w"></span>
+<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">function_2.mcfunction</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Module-level components are generated in the <code class="docutils literal notranslate"><span class="pre">module/component</span></code> directory,
+being directly associated with its parent module.</p>
+<blockquote>
+<div><p><strong>Obs:</strong> Each module can only have a single module-level component.</p>
+</div></blockquote>
+<p>Alternatively, we can also create components at specific locations
+by specifying a <code class="docutils literal notranslate"><span class="pre">path</span></code> parameter when using the <code class="docutils literal notranslate"><span class="pre">Component</span></code> factory:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># here:module</span>
+
+<span class="c1"># relative paths</span>
+<span class="n">my_component</span> <span class="o">=</span> <span class="n">Component</span><span class="p">(</span><span class="n">path</span><span class="o">=./</span><span class="n">my_component</span><span class="p">)</span>
+
+<span class="c1"># absolute paths</span>
+<span class="n">another_component</span> <span class="o">=</span> <span class="n">Component</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">there</span><span class="p">:</span><span class="n">another_component</span><span class="p">)</span>
+
+<span class="c1"># project root using generate_path helper function</span>
+<span class="n">root</span> <span class="o">=</span> <span class="n">Component</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">generate_path</span><span class="p">(</span><span class="s2">""</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>All of these components combined would generate the following structure:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">here</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">module.mcfunction</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">function_1.mcfunction</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">function_2.mcfunction</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">my_component</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">function_1.mcfunction</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">function_2.mcfunction</span><span class="w"></span>
+<span class="nt">there</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">another_component</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">function_1.mcfunction</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">function_2.mcfunction</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This way, we're in full control of the generated structure. However,
+this method requires extra caution, since <strong>two components can't</strong>
+<strong>exist under the same path and it's easier to overwrite existing files.</strong></p>
+<p>Now that we have a <code class="docutils literal notranslate"><span class="pre">Component</span></code> object in hands, we can start defining
+its properties through the API.</p>
+<section id="api">
+<h3>API<a class="headerlink" href="#api" title="Permalink to this headline">#</a></h3>
+<section id="component-on">
+<h4>Component.on<a class="headerlink" href="#component-on" title="Permalink to this headline">#</a></h4>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">Component.on(event_name:</span> <span class="pre">str,</span> <span class="pre">path:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">tags:</span> <span class="pre">Iterable[str]</span> <span class="pre">=</span> <span class="pre">[])</span></code></p>
+</div></blockquote>
+<p>Registers a new function listener to the event <code class="docutils literal notranslate"><span class="pre">event_name</span></code>. If the parameter
+<code class="docutils literal notranslate"><span class="pre">path</span></code> is not specified, a unique path is generated using <code class="docutils literal notranslate"><span class="pre">Component.path</span></code>.
+If the parameter <code class="docutils literal notranslate"><span class="pre">tags</span></code> is specified, the registered function is added to
+all function tags.</p>
+<p>Returns the registered <a class="reference external" href="https://minecraft.fandom.com/wiki/Resource_location">resource location</a>. The returned value can be used to define a nested
+function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># namespace:main</span>
+
+<span class="kn">from</span> <span class="nn">integrity</span> <span class="kn">import</span> <span class="n">Component</span>
+
+<span class="n">clock</span> <span class="o">=</span> <span class="n">Component</span><span class="p">(</span><span class="s2">"golden_clock"</span><span class="p">)</span>
+
+<span class="n">init_path</span> <span class="o">=</span> <span class="n">clock</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s2">"init"</span><span class="p">)</span>
+<span class="n">function</span> <span class="n">init_path</span><span class="p">:</span>
+    <span class="n">say</span> <span class="s2">"On clock init"</span>
+
+<span class="n">function</span> <span class="n">clock</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s2">"tick"</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">"minecraft:tick"</span><span class="p">]):</span>
+    <span class="n">say</span> <span class="s2">"On clock tick"</span>
+
+<span class="n">function</span> <span class="n">clock</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s2">"second"</span><span class="p">):</span>
+    <span class="n">say</span> <span class="s2">"On clock second"</span>
+
+<span class="n">function</span> <span class="n">clock</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s2">"second"</span><span class="p">):</span>
+    <span class="n">say</span> <span class="s2">"Also on clock second"</span>
+
+<span class="n">function</span> <span class="n">clock</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s2">"second"</span><span class="p">,</span> <span class="o">./</span><span class="n">path_to</span><span class="o">/</span><span class="n">second</span><span class="p">):</span>
+    <span class="n">say</span> <span class="s2">"On clock second but explicit path"</span>
+
+<span class="n">clock</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s2">"second"</span><span class="p">,</span> <span class="n">demo</span><span class="p">:</span><span class="n">existing_function</span><span class="o">/</span><span class="n">do_stuff</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This example would generate the following functions:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">namespace</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main.mcfunction</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">main</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">components</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">golden_clock</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">init.mcfunction</span><span class="w"></span>
+<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tick.mcfunction</span><span class="w"></span>
+<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">second.mcfunction</span><span class="w"></span>
+<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">second_1.mcfunction</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path_to</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">second.mcfunction</span><span class="w"></span>
+<span class="nt">demo</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">existing_function</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">do_stuff.mcfunction</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Events will also generate function tags if more than one
+listener is registered:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">namespace</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">main</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">components</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">golden_clock</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">second.json</span><span class="w"></span>
+<span class="nt">minecraft</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tick.json</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Since both the <code class="docutils literal notranslate"><span class="pre">init</span></code> and <code class="docutils literal notranslate"><span class="pre">tick</span></code> events only have a single function
+listener, function tags are not generated and the events will refer
+to their listener paths directly when using <code class="docutils literal notranslate"><span class="pre">Component.run</span></code>.</p>
+</section>
+<section id="component-run">
+<h4>Component.run<a class="headerlink" href="#component-run" title="Permalink to this headline">#</a></h4>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">Component.run(event_name:</span> <span class="pre">str)</span></code></p>
+</div></blockquote>
+<p>Generates a <code class="docutils literal notranslate"><span class="pre">function</span></code> command that calls the event <code class="docutils literal notranslate"><span class="pre">event_name</span></code>.
+If the event only has a single function listener, the listener
+is called directly, otherwise the event function tag is called instead.
+If the provided <code class="docutils literal notranslate"><span class="pre">event_name</span></code> argument is prefixed by <code class="docutils literal notranslate"><span class="pre">#</span></code>, the event
+function tag is forcedly called.</p>
+<p>The command is generated regardless if the function/function tag exists.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demo:main</span>
+
+<span class="kn">from</span> <span class="nn">integrity</span> <span class="kn">import</span> <span class="n">Component</span>
+
+<span class="n">core</span> <span class="o">=</span> <span class="n">Component</span><span class="p">(</span><span class="n">path</span><span class="o">=./</span><span class="n">core</span><span class="p">)</span>
+
+<span class="n">core</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s2">"tick"</span><span class="p">,</span> <span class="o">./</span><span class="n">tick</span><span class="p">)</span>
+
+<span class="n">core</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">"tick"</span><span class="p">)</span>
+<span class="c1"># function demo:tick</span>
+
+<span class="n">core</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s2">"stuff"</span><span class="p">)</span> <span class="c1"># generates path for us</span>
+<span class="n">core</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s2">"stuff"</span><span class="p">)</span>
+
+<span class="n">core</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">"stuff"</span><span class="p">)</span>
+<span class="c1"># function #demo:core/stuff</span>
+
+<span class="n">core</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">"next"</span><span class="p">)</span> <span class="c1"># not implemented</span>
+<span class="c1"># function demo:core/next</span>
+
+<span class="n">core</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">"#prepare"</span><span class="p">)</span>
+<span class="c1"># function #demo:core/prepare</span>
+</pre></div>
+</div>
+</section>
+<section id="component-data">
+<h4>Component.data<a class="headerlink" href="#component-data" title="Permalink to this headline">#</a></h4>
+<p>A <code class="docutils literal notranslate"><span class="pre">dict</span></code> object to store anything that might belong to a specific component.
+All components are created with an empty <code class="docutils literal notranslate"><span class="pre">data</span></code> field.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">integrity</span> <span class="kn">import</span> <span class="n">Component</span>
+
+<span class="n">player</span> <span class="o">=</span> <span class="n">Component</span><span class="p">(</span><span class="s2">"player"</span><span class="p">)</span>
+<span class="n">player</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">"entity_id"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"minecraft:player"</span>
+
+<span class="n">pig</span> <span class="o">=</span> <span class="n">Component</span><span class="p">(</span><span class="s2">"pig"</span><span class="p">)</span>
+<span class="n">player</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">"entity_id"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"minecraft:pig"</span>
+
+<span class="n">player</span><span class="o">.</span><span class="n">data</span> <span class="c1"># { "entity_id": "minecraft:player" }</span>
+<span class="n">pig</span><span class="o">.</span><span class="n">data</span> <span class="c1"># { "entity_id": "minecraft:pig" }</span>
+</pre></div>
+</div>
+</section>
+<section id="component-path">
+<h4>Component.path<a class="headerlink" href="#component-path" title="Permalink to this headline">#</a></h4>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">Component.path(relative:</span> <span class="pre">str,</span> <span class="pre">tag:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False)</span></code></p>
+</div></blockquote>
+<p>Generates a <a class="reference external" href="https://minecraft.fandom.com/wiki/Resource_location">resource location</a>
+based on the component root path and the provided <code class="docutils literal notranslate"><span class="pre">relative</span></code> argument.
+If <code class="docutils literal notranslate"><span class="pre">tag</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, a tag resource location (prefixed by <code class="docutils literal notranslate"><span class="pre">#</span></code>) is
+generated instead.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>from integrity import Component
+
+player = Component(path=./player)
+
+predicate player.path("is_sneaking") {
+    ...
+}
+
+if predicate player.path("is_sneaking") say Hi!
+
+loot spawn ~ ~ ~ loot player.path("weapons/iron_sword")
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="../">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Components</a><ul>
+<li><a class="reference internal" href="#component">Component</a><ul>
+<li><a class="reference internal" href="#api">API</a><ul>
+<li><a class="reference internal" href="#component-on">Component.on</a></li>
+<li><a class="reference internal" href="#component-run">Component.run</a></li>
+<li><a class="reference internal" href="#component-data">Component.data</a></li>
+<li><a class="reference internal" href="#component-path">Component.path</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    </body>
+</html>
