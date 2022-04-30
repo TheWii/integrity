@@ -44,11 +44,11 @@ $ pip install integrity
 
 To use this package, we must add the plugin to the `require`
 section in the `beet` project file alongside with `mecha` and
-`mecha.contrib.bolt`.
+`bolt`.
 
 ```yaml
 require:
-    - mecha.contrib.bolt
+    - bolt
     - integrity
 pipeline:
     - mecha
