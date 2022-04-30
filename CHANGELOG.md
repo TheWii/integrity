@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v0.7.1 (2022-04-30)
+### Fix
+* Update `mecha.contrib.bolt` to `bolt` ([`0269a85`](https://github.com/TheWii/integrity/commit/0269a85c39fab70fca3d331824056b1c015f42bd))
+
+### Documentation
+* Change `mecha.contrib.bolt` ([`4ee6f74`](https://github.com/TheWii/integrity/commit/4ee6f747d715ac7991936987037472d244263c24))
+
 ## v0.7.0 (2022-04-22)
 ### Feature
 * Bind bolt functions to components with `setmethod` ([`e3857f8`](https://github.com/TheWii/integrity/commit/e3857f8cf3e490ac06b41d1979736a5e171e6a3c))
