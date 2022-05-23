@@ -19,7 +19,7 @@ keywords = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-beet = "^0.63.1"
+beet = ">=0.63.1,<0.67.0"
 mecha = "^0.48.1"
 bolt = "^0.3.2"
 
