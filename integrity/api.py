@@ -2,8 +2,8 @@ from dataclasses import dataclass
 from functools import cached_property
 
 from beet import Context
-from mecha import AstCommand, Mecha
 from bolt import Runtime
+from mecha import AstCommand, Mecha
 
 
 @dataclass
