@@ -21,21 +21,22 @@ say creeper["entity_id"]
 
 # component methods will always have
 # the component reference as first parameter
+@pig.method
 def summon(entity):
   summon entity["entity_id"] ~ ~ ~
 
 creeper.setmethod("summon", summon)
-pig.setmethod("summon", summon)
 
 creeper.summon()
 pig.summon()
 
-
+@creeper.method("tp_all")
+@pig.method("tp_all")
+@pig.method("other_tp_all")
 def tp_all_entities(entity, x, y, z):
   tp @e[type=entity["entity_id"]] x y z
 
-creeper.setmethod("tp_all", tp_all_entities)
-pig.setmethod("tp_all", tp_all_entities)
 
 creeper.tp_all(40, 63, -10)
 pig.tp_all(0, 100, 0)
+pig.other_tp_all(5, 20, 7)
