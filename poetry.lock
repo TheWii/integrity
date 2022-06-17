@@ -176,7 +176,7 @@ dev = ["pip-tools (==6.5.1)", "pytest (==7.1.1)", "flake8 (==4.0.1)", "tox (==3.
 
 [[package]]
 name = "bolt"
-version = "0.7.1"
+version = "0.7.0"
 description = "Supercharge Minecraft commands with Python"
 category = "main"
 optional = false
@@ -1908,7 +1908,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "63a715f6c99e5ffcfb2f44fe22ec6189549321fe4ed2c51b96a8d94ea2a86872"
+content-hash = "1a13c4c29a7f9a08082fdcd5fba3e56377a054a66993dbcb955a1d8a9c803666"
 
 [metadata.files]
 alabaster = [
@@ -2004,8 +2004,8 @@ bleach = [
     {file = "bleach-5.0.0.tar.gz", hash = "sha256:c6d6cc054bdc9c83b48b8083e236e5f00f238428666d2ce2e083eaa5fd568565"},
 ]
 bolt = [
-    {file = "bolt-0.7.1-py3-none-any.whl", hash = "sha256:446bda68624209aa65228d0bc37f300093207d68b1c6b5426a5459c62e24ef1d"},
-    {file = "bolt-0.7.1.tar.gz", hash = "sha256:d05f3c390d92c9547ace60fbd49333ebd6852d93181f8f1d2c992be95243ad63"},
+    {file = "bolt-0.7.0-py3-none-any.whl", hash = "sha256:2a38aac4418540d32bc437f65c91fdeb4673e52cbe9f0e679eec6990b8aa302a"},
+    {file = "bolt-0.7.0.tar.gz", hash = "sha256:b9e90733d58430edc2e3dff978d8e41d7e10f47fe0a43e2424e056ae2c98af2f"},
 ]
 certifi = [
     {file = "certifi-2022.6.15-py3-none-any.whl", hash = "sha256:fe86415d55e84719d75f8b69414f6438ac3547d2078ab91b67e779ef69378412"},
