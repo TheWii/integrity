@@ -101,6 +101,17 @@ class Component:
     def setmethod(self, name: str, function: Callable[["Component"], Any]):
         self.methods[name] = partial(function, self)
 
+    def method(self, arg):
+        def decorator(func):
+            self.setmethod(arg, func)
+            return func
+
+        if isinstance(arg, str):
+            return decorator
+        if callable(arg):
+            self.setmethod(arg.__name__, arg)
+            return arg
+
     def __getattr__(self, key: str):
         return self.methods[key]
 
