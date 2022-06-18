@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "integrity"
-version = "0.8.0"
+version = "0.7.1"
 description = "Development facilities for the bolt environment"
 authors = ["TheWii"]
 license = "MIT"
