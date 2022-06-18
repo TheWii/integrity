@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v0.8.0 (2022-06-18)
+### Feature
+* Component method decorators ([`af94217`](https://github.com/TheWii/integrity/commit/af94217292e1824f42ddad5df9e2cc2eb679797a))
+
+### Fix
+* Incorrect dependency versioning ([`ef1e1c8`](https://github.com/TheWii/integrity/commit/ef1e1c84d796ebec5ca9abe2e1082cc818a2e7df))
+
 ## v0.7.1 (2022-04-30)
 ### Fix
 * Update `mecha.contrib.bolt` to `bolt` ([`0269a85`](https://github.com/TheWii/integrity/commit/0269a85c39fab70fca3d331824056b1c015f42bd))
