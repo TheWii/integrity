@@ -1,0 +1,17 @@
+name: integrity-hooks-basic
+
+data_pack:
+  load:
+    - data/test/functions: src
+
+require:
+  - bolt
+  - integrity
+
+pipeline:
+  - mecha
+
+output: dist
+
+meta:
+  generate_namespace: test
