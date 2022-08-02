@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.9.0 (2022-08-02)
+### Feature
+* Add hooks ([`060c78c`](https://github.com/TheWii/integrity/commit/060c78c55ab65600601fd7561f7fe91ae30001d2))
+
 ## v0.8.0 (2022-06-18)
 ### Feature
 * Component method decorators ([`af94217`](https://github.com/TheWii/integrity/commit/af94217292e1824f42ddad5df9e2cc2eb679797a))
