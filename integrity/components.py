@@ -33,7 +33,7 @@ class Components:
     __call__ = create
 
     def generate_path(self, name: str = None):
-        current = self.api._runtime.get_path()
+        current = self.api._runtime.modules.current_path
         if name is None:
             return f"{current}/component"
         return f"{current}/components/{name}"
